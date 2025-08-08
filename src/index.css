@@ -39,9 +39,16 @@ body {
     color: transparent;
 }
 
+@utility radial-gradient-noise {
+    background: url('/images/noise.png')
+        /* , radial-gradient(#242424 0%, #000000 100%) */
+    ;
+}
+
 @layer components {
     #nav-bar {
         @apply fixed w-full flex tablet:flex-row pt-6 px-[35px] flex-col justify-between items-center tablet:px-[90px] tablet:pt-0 gap-6 z-50;
+        background-color: rgba(0, 0, 0, 0.314);
 
         .logo {
             @apply flex tablet:justify-between justify-center items-center gap-2 w-full tablet:w-auto;
@@ -118,12 +125,61 @@ body {
         @apply absolute size-full bg-[url('/images/noise.png')] inset-0;
     }
 
+    .noise-radial-gradient {
+        @apply absolute size-full inset-0 radial-gradient-noise;
+    }
+
     .video {
-        @apply absolute inset-0;
+        @apply absolute bottom-0 inset-0;
 
         video {
-            @apply w-full tablet:h-[70%] h-1/2 absolute bottom-0 left-0 tablet:object-contain object-bottom object-cover;
+            @apply w-full md:h-[80%] h-1/2 absolute bottom-0 left-0 md:object-contain object-bottom object-cover;
 
+        }
+    }
+
+    #cocktails {
+        @apply relative px-20 pt-30 min-h-dvh overflow-hidden;
+
+        .cocktail-left-leaf {
+            @apply absolute left-0 bottom-0 w-70;
+
+        }
+
+        .cocktail-right-leaf {
+            @apply absolute right-0 bottom-0 w-70;
+        }
+
+        .content {
+            @apply flex flex-row justify-between ;
+
+            div {
+                @apply flex flex-col gap-6;
+
+                h1 {
+                    @apply text-xl font-medium;
+                }
+
+                ul {
+                    @apply flex flex-col gap-7 w-[340px];
+
+                    li p:first-of-type {
+                        @apply flex justify-between items-center;
+                    }
+
+                    li p:last-of-type {
+                        @apply space-x-1 font-medium;
+                    }
+
+                    .name {
+                        @apply text-yellow text-3xl tracking-normal font-modern-negra;
+                    }
+
+                    .price {
+                        @apply font-medium text-[22px];
+                    }
+                }
+            }
         }
     }
 
