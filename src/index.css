@@ -1,5 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
+
 @import "tailwindcss";
 
-@utility flex-center{
+@font-face {
+    font-family: "Modern Negra";
+    src: url("/fonts/Modern Negra Demo.ttf") format("truetype");
+}
+
+@theme {
+    --color-yellow: #e7d393;
+    --color-white-100: #efefef;
+    --font-sans: "Mona Sans", sans-serif;
+    --font-modern-negra: "Modern Negra", sans-serif;
+    --font-serif: "DM Serif Text", serif;
+
+    --breakpoint-desktop: 1440px;
+    --breakpoint-tablet: 768px;
+
+}
+
+html,
+body {
+    width: 100%;
+    background-color: black;
+    color: white;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+@utility flex-center {
     @apply flex items-center justify-center;
+}
+
+@utility text-gradient {
+    background: linear-gradient(to bottom, #ffffff, #898989);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+@layer components {
+    #nav-bar {
+        @apply fixed w-full flex tablet:flex-row pt-6 px-[35px] flex-col justify-between items-center tablet:px-[90px] tablet:pt-0 gap-6 z-50;
+
+        .logo {
+            @apply flex tablet:justify-between justify-center items-center gap-2 w-full tablet:w-auto;
+
+            p {
+                @apply text-3xl font-modern-negra -mb-2;
+            }
+        }
+
+        ul {
+            @apply flex items-center tablet:gap-12 justify-between tablet:py-8 w-full tablet:w-auto;
+        }
+
+        a {
+            @apply font-medium text-nowrap hover:text-yellow text-sm tablet:text-lg transition-all duration-100;
+        }
+
+    }
+
+    #hero {
+        @apply relative min-h-dvh w-full z-10;
+
+        h1 {
+            @apply desktop:text-[330px] tablet:text-[20vw] font-modern-negra tablet:pt-36 pt-40 text-8xl tablet:text-9xl uppercase tracking-[-0.02em] m-auto leading-none text-center text-gradient;
+        }
+
+        .left-leaf {
+            @apply absolute left-0 tablet:top-56 bottom-0 w-40 tablet:w-auto;
+        }
+
+        .right-leaf {
+            @apply absolute right-0 tablet:top-2.5 top-60 w-40 tablet:w-auto;
+        }
+
+        .hero-arrow {
+            @apply absolute right-8 hidden md:flex bottom-1/4;
+        }
+
+        .wrapper {
+            @apply w-full tablet:top-[30vh] absolute tablet:bottom-14 bottom-80 flex items-end top-[10vh];
+
+            .content {
+                @apply flex tablet:justify-between items-end absolute h-full w-full px-7 tablet:px-20 mx-auto gap-10 justify-center;
+
+                .recipe {
+                    @apply flex-col gap-3 max-w-3xs hidden tablet:flex;
+
+                    p {
+                        @apply font-medium tracking-[0] leading-[24px];
+                    }
+
+                    p.subtitle {
+                        @apply text-yellow font-normal text-[50px] font-modern-negra leading-[46px];
+                    }
+                }
+
+                .view-cocktails {
+                    @apply flex flex-col gap-3 tablet:max-w-[292px] tablet:text-lg text-base text-center tablet:text-left;
+
+                    p {
+                        @apply leading-[28px];
+                    }
+
+                    a {
+                        @apply hover:text-yellow;
+                    }
+                }
+            }
+
+        }
+    }
+
+    .noise {
+        @apply absolute size-full bg-[url('/images/noise.png')] inset-0;
+    }
+
+    .video {
+        @apply absolute inset-0;
+
+        video {
+            @apply w-full tablet:h-[70%] h-1/2 absolute bottom-0 left-0 tablet:object-contain object-bottom object-cover;
+
+        }
+    }
+
 }
