@@ -52,4 +52,6 @@ const mockTailLists = [
   },
 ];
 
-export { cocktailLists, mockTailLists };
+const rating = 4.3; 
+
+export { cocktailLists, mockTailLists,rating };

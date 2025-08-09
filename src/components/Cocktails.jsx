@@ -47,10 +47,10 @@ const Cocktails = () => {
               <li key={index}>
                 <p>
                   <span className="name">{cocktail.name}</span>
-                  <p className="space-x-2.5">
+                  <span className="space-x-2.5">
                     <span className="font-semibold">-</span>
                     <span className="price">{cocktail.price}</span>
-                  </p>
+                  </span>
                 </p>
                 <p>
                   <span className="country">{cocktail.country}</span>
@@ -69,10 +69,10 @@ const Cocktails = () => {
               <li key={index}>
                 <p>
                   <span className="name">{cocktail.name}</span>
-                  <p className="space-x-2.5">
+                  <span className="space-x-2.5">
                     <span className="font-semibold">-</span>
                     <span className="price">{cocktail.price}</span>
-                  </p>
+                  </span>
                 </p>
                 <p>
                   <span className="country">{cocktail.country}</span>
