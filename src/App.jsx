@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import Cocktails from "./components/Cocktails";
 import About from "./components/About";
 import Art from "./components/Art";
+import Menu from "./components/Menu";
 
 
 
@@ -11,9 +12,10 @@ const App = () => {
     <main>
       <NavBar />
       <Hero />
-      <Cocktails></Cocktails>
-      <About></About>
+      <Cocktails />
+      <About />
       <Art />
+      <Menu />
       <div className="box h-[1000px]"></div>
     </main>
   );

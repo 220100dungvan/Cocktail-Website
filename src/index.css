@@ -40,7 +40,7 @@ body {
 }
 
 @utility radial-gradient {
-    background: radial-gradient(#242424 0%, #000000 100%);
+    background: radial-gradient(#434343 0%, #000000 100%);
 }
 
 @layer components {
@@ -304,7 +304,7 @@ body {
 
 
         .image-art-center {
-            @apply absolute rounded-[40px] overflow-hidden w-[810px]  bottom-[180px];
+            @apply absolute rounded-[40px] overflow-hidden w-[810px] bottom-[180px];
 
             .element {
 
@@ -313,7 +313,7 @@ body {
                 mask-repeat: no-repeat;
                 mask-position: center;
             }
-           
+
         }
 
 
@@ -326,7 +326,88 @@ body {
         }
     }
 
+    #menu {
+        @apply relative min-h-screen flex flex-col items-center pt-[86px] pb-40 px-28;
 
+        .tabs {
+            @apply flex flex-row gap-15 items-center justify-between;
+
+            button {
+                @apply px-4 font-modern-negra text-[32px] pb-2 relative cursor-pointer;
+                background: url(/images/noise.png), #adadad;
+                background-clip: text;
+                color: transparent;
+            }
+
+            button.active {
+                background: white;
+                background-clip: text;
+            }
+
+            button::after {
+                @apply absolute bottom-0 left-0 w-full h-[2px];
+                content: "";
+                background: url(/images/noise.png), #adadad;
+            }
+
+            button.active::after {
+                background: white;
+            }
+        }
+
+        .content {
+            @apply flex flex-row justify-between items-end w-full h-[540px];
+
+            .recipe {
+                @apply space-y-3;
+
+                p {
+                    @apply font-medium;
+                }
+
+                p.cocktail-name {
+                    @apply text-yellow font-modern-negra text-[50px] font-normal;
+                }
+            }
+
+            .cocktail-info {
+                @apply max-w-[440px] space-y-[22px];
+
+                .cocktail-title {
+                    @apply font-serif font-normal text-[48px] leading-[115%] tracking-[1px] text-left;
+                }
+
+                .cocktail-detail {
+                    @apply font-medium text-lg font-sans;
+                }
+            }
+        }
+
+        .m-left-leaf {
+            @apply absolute left-0 bottom-0;
+        }
+
+        .m-right-leaf {
+            @apply absolute right-0 top-0;
+        }
+
+        .arrows {
+            @apply absolute w-full flex flex-row justify-between items-center top-[40%] -translate-y-1/2 px-16;
+
+            div {
+                @apply max-w-[111px];
+
+            }
+
+            p {
+                @apply font-modern-negra text-[32px];
+            }
+            p:hover{
+                @apply text-yellow;
+            }
+
+        }
+    }
 
 
 }
