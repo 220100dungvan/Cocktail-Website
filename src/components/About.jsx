@@ -10,9 +10,9 @@ const About = () => {
   useGSAP(() => {
     document.fonts.ready.then(() => {
       const titleSplitText = SplitText.create(".title p", { type: "lines" });
-      console.log(titleSplitText);
+      // console.log(titleSplitText);
       gsap.timeline().from(titleSplitText.lines, {
-        yPercent: 100,
+        yPercent: 300,
         opacity: 0,
         duration: 1.2,
         ease: "expo.out",
@@ -25,12 +25,12 @@ const About = () => {
         },
       });
     });
-    gsap.from(".cocktail-images > img", {
+    gsap.from(".image-box ", {
       // y: 100,
       opacity: 0,
       duration: 1,
       ease: "expo.out",
-      stagger: 0.2,
+      stagger: 0.1,
       scrollTrigger: {
         trigger: ".cocktail-images",
         start: "top 90%",
@@ -69,7 +69,7 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="noise">
+    <section id="about" className="noise-radial-gradient">
       <div className="content">
         <div className="info">
           <div className="title">
@@ -109,8 +109,11 @@ const About = () => {
           </div>
         </div>
         <div className="cocktail-images">
-          <img src="/images/abt1.png" alt="" className="col-span-3 " />
-          <div className="cocktail-feature col-span-4">
+          <div className="image-box col-span-3">
+            <img src="/images/abt1.png" alt="" />
+            <div className="noise"></div>
+          </div>
+          <div className="image-box cocktail-feature col-span-4">
             <h1>Crafted to Impress</h1>
             <ul className="cocktail-feature__list font-medium text-lg flex flex-col gap-3">
               <li className="flex items-center gap-4 ">
@@ -131,9 +134,18 @@ const About = () => {
               </li>
             </ul>
           </div>
-          <img src="/images/abt2.png" className="col-span-5" alt="" />
-          <img src="/images/abt3.png" className="col-span-8" alt="" />
-          <img src="/images/abt4.png" className="col-span-4" alt="" />
+          <div className="image-box col-span-5">
+            <img src="/images/abt2.png" alt="" />
+            <div className="noise"></div>
+          </div>
+          <div className="image-box col-span-8">
+            <img src="/images/abt3.png" alt="" />
+            <div className="noise"></div>
+          </div>
+          <div className="image-box col-span-4">
+            <img src="/images/abt4.png" alt="" />
+            <div className="noise"></div>
+          </div>
         </div>
       </div>
     </section>

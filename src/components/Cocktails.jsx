@@ -28,7 +28,7 @@ const Cocktails = () => {
     });
   }, []);
   return (
-    <section className="noise-radial-gradient" id="cocktails">
+    <section className="noise" id="cocktails">
       <img
         className="cocktail-left-leaf"
         src="/images/cocktail-left-leaf.png"
