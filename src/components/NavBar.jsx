@@ -3,22 +3,22 @@ import React from "react";
 const NavBar = () => {
   return (
     <nav id="nav-bar">
-      <a href="#home" className="logo">
+      <a href="#hero" className="logo">
         <img src="/images/logo.svg" alt="logo" />
         <p>Velvet Pour</p>
       </a>
       <ul>
         <li>
-          <a href="">Cocktail</a>
+          <a href="#cocktails">Cocktail</a>
         </li>
         <li>
-          <a href="">About Us</a>
+          <a href="#about">About Us</a>
         </li>
         <li>
-          <a href="">The Art</a>
+          <a href="#art">The Art</a>
         </li>
         <li>
-          <a href="">Contact</a>
+          <a href="#contact">Contact</a>
         </li>
       </ul>
     </nav>

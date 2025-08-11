@@ -402,12 +402,44 @@ body {
             p {
                 @apply font-modern-negra text-[32px];
             }
-            p:hover{
+
+            p:hover {
                 @apply text-yellow;
             }
 
         }
     }
 
+    #contact {
+        @apply relative min-h-screen flex flex-col items-center pt-[80px] pb-16  justify-between gap-[30px];
 
+        h1 {
+            @apply font-modern-negra text-[90px] leading-none tracking-normal;
+        }
+
+        .content {
+            @apply flex flex-col items-center gap-[50px] justify-between;
+
+            .label {
+                @apply uppercase text-lg font-medium font-sans text-center;
+            }
+
+            .text {
+                @apply font-sans text-3xl text-center;
+            }
+
+            > div {
+                @apply flex flex-col gap-5 ;
+            }
+        }
+        .f-left-leaf {
+            @apply absolute left-0 bottom-0 ;
+        }
+        .f-right-leaf {
+            @apply absolute right-0 top-0;
+        }
+        .f-drinks{
+            @apply absolute bottom-0 right-0;
+        }
+    }
 }
